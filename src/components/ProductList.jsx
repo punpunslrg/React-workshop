@@ -6,7 +6,7 @@ export default function ProductList(props) {
   console.log(products[0])
 
   return (
-    <div className='min-w-2/3 bg-[#A9B5DF]'>
+    <div className='min-w-2/3 bg-[#A9B5DF] p-2'>
       <h2 className='text-2xl rounded py-2 text-slate-600'>ProductList</h2>
       <div className='flex flex-wrap gap-3'>
         {products.map( el => (
