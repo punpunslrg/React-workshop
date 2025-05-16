@@ -19,8 +19,17 @@ function App() {
   },[])
 
   const addToCart = (id, title, price) => {
-    let newItem = { id: id, title: title, price: price, quantity: 1 }
-    setCarts([...carts, newItem])
+    let idx = carts.findIndex(el => el.id === id)
+    let newItem 
+
+    if(idx === -1) {
+      newItem = { id: id, title: title, price: price, quantity: 1 }
+      setCarts([...carts, newItem])
+    } else {
+      const clonedCart = [...carts]
+      clonedCart[idx].quantity += 1
+      setCarts(clonedCart)
+    }
   }
 
   return (
